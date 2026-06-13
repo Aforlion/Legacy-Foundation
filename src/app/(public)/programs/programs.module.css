@@ -1,0 +1,204 @@
+/* ── HEADER SECTION ─────────────────────────────────────────── */
+.headerSection {
+  position: relative;
+  background-color: var(--color-primary-dark);
+  background-image: url('https://images.unsplash.com/photo-1509099836639-18ba1795216d?q=80&w=1920');
+  background-size: cover;
+  background-position: center;
+  padding: 6rem 1.5rem;
+  text-align: center;
+  color: #ffffff;
+}
+
+.headerOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(13, 27, 42, 0.85);
+  z-index: 1;
+}
+
+.headerContent {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.headerContent h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  font-family: var(--font-secondary);
+}
+
+.headerContent p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 300;
+}
+
+/* ── PROGRAM SECTION ────────────────────────────────────────── */
+.programSection {
+  padding: 6rem 0;
+  background-color: #ffffff;
+}
+
+.bgLight {
+  background-color: var(--color-light);
+}
+
+.programGrid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.reverse {
+  grid-template-columns: 0.9fr 1.1fr;
+}
+
+.reverse .programContent {
+  grid-column: 2;
+}
+
+.reverse .programImgWrapper {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.programContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.categoryBadge {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 0.25rem 0.75rem;
+  background: rgba(65, 90, 119, 0.1);
+  color: var(--color-primary-light);
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.programContent h2 {
+  font-size: 2.25rem;
+  color: var(--color-primary-dark);
+  font-family: var(--font-secondary);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.leadParagraph {
+  font-size: 1.15rem;
+  color: var(--color-primary);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.programContent p {
+  color: var(--color-gray-dark);
+  line-height: 1.6;
+}
+
+/* Key Stats in Programs */
+.keyStats {
+  display: flex;
+  gap: 3rem;
+  margin-top: 1.5rem;
+  border-top: 1px solid rgba(224, 225, 221, 0.6);
+  padding-top: 1.5rem;
+}
+
+.statNumber {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-accent-dark);
+  font-family: var(--font-secondary);
+}
+
+.statLabel {
+  font-size: 0.9rem;
+  color: var(--color-gray-dark);
+  font-weight: 500;
+}
+
+/* Image Wrapper */
+.programImgWrapper {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.programImg {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+@media (max-width: 992px) {
+  .programGrid, .reverse {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .reverse .programContent {
+    grid-column: 1;
+  }
+  .reverse .programImgWrapper {
+    grid-column: 1;
+    grid-row: auto;
+  }
+  .programImgWrapper {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+/* ── BOTTOM CTA ─────────────────────────────────────────────── */
+.bottomCta {
+  padding: 6rem 0;
+  background-color: var(--color-dark);
+  color: #ffffff;
+}
+
+.bottomCta h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  font-family: var(--font-secondary);
+}
+
+.bottomCta p {
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
+  font-weight: 300;
+}
+
+.ctaButtons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+@media (max-width: 576px) {
+  .bottomCta h2 {
+    font-size: 2rem;
+  }
+  .ctaButtons {
+    flex-direction: column;
+    align-items: stretch;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}

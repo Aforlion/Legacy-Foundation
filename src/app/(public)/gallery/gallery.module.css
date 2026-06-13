@@ -1,0 +1,244 @@
+/* ── HEADER SECTION ─────────────────────────────────────────── */
+.headerSection {
+  position: relative;
+  background-color: var(--color-primary-dark);
+  background-image: url('https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=1920');
+  background-size: cover;
+  background-position: center;
+  padding: 6rem 1.5rem;
+  text-align: center;
+  color: #ffffff;
+}
+
+.headerOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(13, 27, 42, 0.85);
+  z-index: 1;
+}
+
+.headerContent {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.headerContent h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  font-family: var(--font-secondary);
+}
+
+.headerContent p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 300;
+}
+
+/* ── FILTER BAR ─────────────────────────────────────────────── */
+.gallerySection {
+  padding: 5rem 0;
+  background-color: var(--color-light);
+}
+
+.filterBar {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3.5rem;
+  flex-wrap: wrap;
+}
+
+.filterBtn {
+  background: #ffffff;
+  border: 1px solid rgba(224, 225, 221, 0.8);
+  padding: 0.6rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: var(--color-primary-light);
+  box-shadow: var(--shadow-sm);
+}
+
+.filterBtn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.activeBtn {
+  background: var(--color-primary);
+  color: #ffffff !important;
+  border-color: var(--color-primary);
+}
+
+/* ── GALLERY GRID ───────────────────────────────────────────── */
+.galleryGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.galleryItem {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.galleryItem:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.imgWrapper {
+  position: relative;
+  height: 280px;
+  width: 100%;
+}
+
+.galleryImg {
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+/* Hover Overlay */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(13, 27, 42, 0.85);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+  z-index: 2;
+}
+
+.galleryItem:hover .galleryImg {
+  transform: scale(1.08);
+}
+
+.galleryItem:hover .overlay {
+  opacity: 1;
+}
+
+.zoomIcon {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.caption {
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-secondary);
+}
+
+.tag {
+  background: var(--color-accent);
+  color: var(--color-primary-dark);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 992px) {
+  .galleryGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .galleryGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── LIGHTBOX MODAL ─────────────────────────────────────────── */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(13, 27, 42, 0.95);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  animation: fadeIn 0.3s ease;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 3rem;
+  cursor: pointer;
+  transition: color 0.2s;
+  z-index: 10001;
+}
+
+.closeBtn:hover {
+  color: #ffffff;
+}
+
+.lightboxContent {
+  position: relative;
+  max-width: 90%;
+  max-height: 85%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.lightboxImgWrapper {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  background-color: #000000;
+}
+
+.lightboxImg {
+  max-width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+  display: block;
+}
+
+.lightboxTitle {
+  color: #ffffff;
+  font-size: 1.15rem;
+  font-weight: 500;
+  text-align: center;
+  font-family: var(--font-secondary);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
