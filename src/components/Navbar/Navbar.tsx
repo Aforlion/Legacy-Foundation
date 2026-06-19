@@ -1,8 +1,16 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import styles from './Navbar.module.css';
+import {
+  FacebookIcon,
+  InstagramIcon,
+  YoutubeIcon,
+  XIcon,
+  TiktokIcon,
+} from '@/components/Icons';
 
 const NAV_LINKS = [
   { label: 'Home',        href: '/' },
@@ -11,11 +19,9 @@ const NAV_LINKS = [
     label: 'Our Programs',
     href: '/programs',
     children: [
-      { label: 'Education Support',      href: '/programs/education' },
-      { label: 'Humanitarian Aid',       href: '/programs/humanitarian-aid' },
-      { label: 'Community Development',  href: '/programs/community-development' },
-      { label: 'Youth Empowerment',      href: '/programs/youth-empowerment' },
-      { label: 'Healthcare Support',     href: '/programs/healthcare' },
+      { label: 'Early Childhood Development', href: '/programs#ecd' },
+      { label: 'Women Empowerment',           href: '/programs#women' },
+      { label: 'Poverty Alleviation',         href: '/programs#poverty' },
     ],
   },
   { label: 'Projects',    href: '/projects' },
@@ -40,17 +46,24 @@ export default function Navbar() {
       {/* ── Top utility bar ─────────────────────────────────── */}
       <div className={styles.topBar}>
         <div className={`container ${styles.topBarInner}`}>
-          <span>Welcome to Sir John Ndukwe Legacy Foundation</span>
+          <span className={styles.welcomeText}>Welcome to Sir John Ndukwe Legacy Foundation</span>
           <div className={styles.topBarRight}>
-            <span>📍 Plot 87 Valington Royal Estate Jikwoyi, FCT, Abuja</span>
-            <span>📞 +2348065166127</span>
-            <span>✉ sirjohnfoundation@gmail.com</span>
             <div className={styles.socialIcons}>
-              <a href="https://www.facebook.com/Sir John Ndukwe Legacy Foundation" target="_blank" rel="noopener noreferrer" aria-label="Facebook">f</a>
-              <a href="https://www.instagram.com/sirjohnndukwelegacyfoundation" target="_blank" rel="noopener noreferrer" aria-label="Instagram">in</a>
-              <a href="https://www.youtube.com/@SirJohnNdukweLegacyFoundation" target="_blank" rel="noopener noreferrer" aria-label="YouTube">▶</a>
-              <a href="https://twitter.com/Sirjohnndukwe" target="_blank" rel="noopener noreferrer" aria-label="X / Twitter">𝕏</a>
-              <a href="https://www.tiktok.com/@SirJohnNdukweLegacyFoundation" target="_blank" rel="noopener noreferrer" aria-label="TikTok">♪</a>
+              <a href="https://www.facebook.com/Sir%20John%20Ndukwe%20Legacy%20Foundation" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <FacebookIcon size={14} />
+              </a>
+              <a href="https://www.instagram.com/sirjohnndukwelegacyfoundation" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <InstagramIcon size={14} />
+              </a>
+              <a href="https://www.youtube.com/@SirJohnNdukweLegacyFoundation" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                <YoutubeIcon size={14} />
+              </a>
+              <a href="https://twitter.com/Sirjohnndukwe" target="_blank" rel="noopener noreferrer" aria-label="X / Twitter">
+                <XIcon size={12} />
+              </a>
+              <a href="https://www.tiktok.com/@SirJohnNdukweLegacyFoundation" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                <TiktokIcon size={14} />
+              </a>
             </div>
           </div>
         </div>
@@ -61,8 +74,15 @@ export default function Navbar() {
         <div className={`container ${styles.headerInner}`}>
           {/* Logo */}
           <Link href="/" className={styles.logo}>
-            <div className={styles.logoBadge}>
-              <span className={styles.logoInitials}>SJN</span>
+            <div className={styles.logoImageWrapper}>
+              <Image
+                src="/logo.jpg"
+                alt="Sir John Ndukwe Legacy Foundation Logo"
+                width={52}
+                height={52}
+                className={styles.logoImage}
+                priority
+              />
             </div>
             <div className={styles.logoText}>
               <span className={styles.logoName}>SIR JOHN NDUKWE</span>

@@ -1,0 +1,334 @@
+.container {
+  background-color: var(--color-off-white);
+  min-height: 100vh;
+}
+
+/* ── HEADER BANNER ────────────────────────────────────────── */
+.headerSection {
+  position: relative;
+  padding: 5rem 1.5rem;
+  text-align: center;
+  overflow: hidden;
+}
+
+.headerOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    var(--color-primary-dark) 0%,
+    var(--color-primary) 100%
+  );
+  z-index: 1;
+}
+
+.headerContent {
+  position: relative;
+  z-index: 2;
+  color: var(--color-white);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.headerContent h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+  color: var(--color-white);
+}
+
+.headerContent p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* ── CONTENT SECTION ──────────────────────────────────────── */
+.contentSection {
+  padding-block: var(--space-16);
+}
+
+.splitLayout {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: var(--space-12);
+  align-items: start;
+}
+
+.infoCol {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.introParagraph {
+  color: var(--color-gray-600);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: var(--space-4);
+}
+
+.infoCardsGrid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.infoCard {
+  background: var(--color-white);
+  padding: var(--space-5);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+  border: 1px solid var(--color-gray-100);
+  transition: transform var(--duration) var(--ease), box-shadow var(--duration) var(--ease);
+}
+
+.infoCard:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.infoIconWrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--color-gray-50);
+  color: var(--color-primary);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  transition: color var(--duration) var(--ease), background var(--duration) var(--ease);
+}
+
+.infoCard:hover .infoIconWrapper {
+  background: var(--color-primary);
+  color: #ffcc00; /* Sharp Yellow icon highlight */
+}
+
+.infoCardContent h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: var(--space-1);
+  color: var(--color-gray-800);
+}
+
+.infoCardContent p {
+  font-size: 0.95rem;
+  color: var(--color-gray-600);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.infoLink {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--duration) var(--ease);
+}
+
+.infoLink:hover {
+  color: var(--color-primary);
+}
+
+/* ── SOCIAL CARD ──────────────────────────────────────────── */
+.socialCard {
+  background: var(--color-white);
+  padding: var(--space-5);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-gray-100);
+  margin-top: var(--space-2);
+}
+
+.socialCard h3 {
+  font-size: 1.05rem;
+  margin-bottom: var(--space-4);
+  color: var(--color-gray-800);
+}
+
+.socialIconsRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.socialIconsRow a {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--color-gray-50);
+  color: var(--color-gray-600);
+  transition: all var(--duration) var(--ease);
+}
+
+.socialIconsRow a:hover {
+  background: var(--color-primary);
+  color: var(--color-white);
+  transform: translateY(-2px);
+}
+
+/* ── FORM COLUMN ──────────────────────────────────────────── */
+.formCol {
+  position: sticky;
+  top: 96px;
+}
+
+.formCard {
+  background: var(--color-white);
+  padding: var(--space-8);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-gray-100);
+}
+
+.formCard h3 {
+  font-size: 1.35rem;
+  margin-bottom: var(--space-1);
+}
+
+.formCard p {
+  font-size: 0.9rem;
+  color: var(--color-gray-500);
+  margin-bottom: var(--space-6);
+}
+
+.alert {
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: var(--space-6);
+  line-height: 1.4;
+}
+
+.alertSuccess {
+  background-color: var(--badge-approved-bg);
+  color: var(--badge-approved-text);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.alertError {
+  background-color: var(--badge-rejected-bg);
+  color: var(--badge-rejected-text);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.formGroup label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-gray-600);
+}
+
+.formGroup input,
+.formGroup textarea {
+  width: 100%;
+  padding: 0.75rem var(--space-4);
+  border: 1.5px solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  outline: none;
+  background-color: var(--color-white);
+  transition: all var(--duration) var(--ease);
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(0, 61, 153, 0.12);
+}
+
+/* ── DECORATIVE MAP SECTION ───────────────────────────────── */
+.mapSection {
+  padding-bottom: var(--space-20);
+}
+
+.mapCard {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--color-gray-100);
+}
+
+.mapPlaceholder {
+  height: 350px;
+  background-color: var(--color-primary-dark);
+  background-image: radial-gradient(
+      circle at 30% 20%,
+      rgba(255, 255, 255, 0.05) 0%,
+      transparent 50%
+    ),
+    radial-gradient(circle at 80% 70%, rgba(2, 136, 209, 0.15) 0%, transparent 60%),
+    linear-gradient(135deg, #0d1b35 0%, #002a6e 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: var(--space-6);
+}
+
+.mapOverlayText {
+  background: rgba(13, 27, 42, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: var(--space-8);
+  border-radius: var(--radius-md);
+  text-align: center;
+  max-width: 550px;
+  color: var(--color-white);
+  box-shadow: var(--shadow-xl);
+}
+
+.mapOverlayText h3 {
+  color: var(--color-white);
+  font-size: 1.25rem;
+  margin-bottom: var(--space-2);
+}
+
+.mapOverlayText p {
+  font-size: 0.95rem;
+  color: var(--color-gray-200);
+  margin: 0;
+}
+
+/* ── RESPONSIVE BRACKETS ──────────────────────────────────── */
+@media (max-width: 992px) {
+  .splitLayout {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+  .formCol {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .formCard {
+    padding: var(--space-6);
+  }
+  .mapPlaceholder {
+    height: 300px;
+  }
+  .mapOverlayText {
+    padding: var(--space-5);
+  }
+}

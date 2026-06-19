@@ -18,22 +18,19 @@
   gap: var(--space-4);
 }
 
-.logoBadge {
+.logoImageWrapper {
   width: 52px;
   height: 52px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
-  display: grid;
-  place-items: center;
+  overflow: hidden;
+  position: relative;
   flex-shrink: 0;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  box-shadow: var(--shadow-sm);
 }
 
-.logoBadge span {
-  color: var(--color-white);
-  font-family: var(--font-heading);
-  font-weight: 800;
-  font-size: 0.875rem;
-  letter-spacing: 0.05em;
+.logoImage {
+  object-fit: cover;
 }
 
 .brandName {
@@ -94,13 +91,31 @@
 .contactList li {
   display: flex;
   align-items: flex-start;
-  gap: var(--space-2);
+  gap: var(--space-3);
   font-size: 0.875rem;
-  color: rgba(255,255,255,.6);
+  color: rgba(255,255,255,.75);
   line-height: 1.5;
 }
 
-.contactIcon { flex-shrink: 0; }
+.contactIcon {
+  flex-shrink: 0;
+  color: #ffcc00;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3px;
+  transition: transform var(--duration) var(--ease);
+}
+
+.contactIcon:hover {
+  transform: scale(1.15);
+}
+
+.emailsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
 
 /* ── SOCIAL ───────────────────────────────────────────────── */
 .socialRow {

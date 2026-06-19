@@ -1,33 +1,37 @@
 /* ── TOP BAR ──────────────────────────────────────────────── */
 .topBar {
   background: var(--color-primary-dark);
-  color: rgba(255,255,255,.85);
-  font-size: 0.78rem;
+  color: rgba(255,255,255,.95);
   padding: var(--space-2) 0;
 }
 
 .topBarInner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: var(--space-4);
-  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+  min-height: 28px;
+}
+
+.welcomeText {
+  font-family: 'Constantia', Georgia, serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-align: center;
 }
 
 .topBarRight {
+  position: absolute;
+  right: var(--space-6);
   display: flex;
   align-items: center;
-  gap: var(--space-4);
-  flex-wrap: wrap;
 }
 
 .socialIcons {
   display: flex;
   align-items: center;
   gap: var(--space-2);
-  margin-left: var(--space-2);
-  padding-left: var(--space-4);
-  border-left: 1px solid rgba(255,255,255,.25);
 }
 
 .socialIcons a {
@@ -40,11 +44,14 @@
   color: var(--color-white);
   font-size: 0.7rem;
   font-weight: 700;
-  transition: background var(--duration) var(--ease);
+  transition: background var(--duration) var(--ease), transform var(--duration) var(--ease);
   text-decoration: none;
 }
 
-.socialIcons a:hover { background: var(--color-accent); }
+.socialIcons a:hover {
+  background: var(--color-accent);
+  transform: scale(1.08);
+}
 
 /* ── HEADER ───────────────────────────────────────────────── */
 .header {
@@ -77,22 +84,19 @@
   flex-shrink: 0;
 }
 
-.logoBadge {
-  width: 48px;
-  height: 48px;
+.logoImageWrapper {
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
-  display: grid;
-  place-items: center;
+  overflow: hidden;
+  position: relative;
   flex-shrink: 0;
+  box-shadow: var(--shadow-sm);
+  border: 2px solid var(--color-primary-dark);
 }
 
-.logoInitials {
-  color: var(--color-white);
-  font-family: var(--font-heading);
-  font-weight: 800;
-  font-size: 0.875rem;
-  letter-spacing: 0.05em;
+.logoImage {
+  object-fit: cover;
 }
 
 .logoText {

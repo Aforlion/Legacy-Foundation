@@ -72,49 +72,16 @@ export default async function HomePage() {
 
   return (
     <div className={styles.container}>
-      {/* Hero Section */}
+      {/* Hero — client banner image, unstyled for UX/UI handoff */}
       <section className={styles.hero}>
-        <div className={styles.heroBackground}>
+        <div className={styles.heroImageWrap}>
           <Image
-            src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1920"
-            alt="Humanitarian outreach"
+            src="/header.jpg"
+            alt="Sir John Ndukwe Legacy Foundation Banner"
             fill
             priority
             className={styles.heroImage}
           />
-          <div className={styles.heroOverlay} />
-        </div>
-        <div className={styles.heroContent}>
-          <span className={styles.badge}>Sir John Ndukwe Legacy Foundation</span>
-          <h1 className={styles.heroTitle}>
-            Equity. Dignity. <span className={styles.highlightText}>Humanity.</span>
-          </h1>
-          <p className={styles.heroSubtitle}>
-            Advancing social justice, empowering women, supporting vulnerable populations, and building sustainable futures across Nigeria.
-          </p>
-          <div className={styles.heroButtons}>
-            <Link href="/volunteer" className="btn btn-primary btn-lg">
-              Become a Volunteer
-            </Link>
-            <Link href="/donate" className="btn btn-outline-light btn-lg">
-              Donate Now
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Stats Counter Section */}
-      <section className={styles.statsSection}>
-        <div className="container">
-          <div className={styles.statsGrid}>
-            {stats.map((stat: any) => (
-              <div key={stat.id} className={styles.statCard}>
-                <span className={styles.statIcon}>{stat.icon || '📊'}</span>
-                <h3 className={styles.statVal}>{stat.value}</h3>
-                <p className={styles.statLbl}>{stat.label}</p>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -239,10 +206,10 @@ export default async function HomePage() {
           <h2>Ready to Make an Impact?</h2>
           <p>Whether you choose to give your time as a volunteer or sponsor a program through your donations, your support changes lives.</p>
           <div className={styles.ctaButtons}>
-            <Link href="/volunteer" className="btn btn-light btn-lg">
+            <Link href="/volunteer" className="btn btn--white btn--lg">
               Join as Volunteer
             </Link>
-            <Link href="/donate" className="btn btn-outline-light btn-lg">
+            <Link href="/donate" className="btn btn--ghost btn--lg">
               Support Financially
             </Link>
           </div>

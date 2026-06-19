@@ -1,5 +1,17 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import styles from './Footer.module.css';
+import {
+  FacebookIcon,
+  InstagramIcon,
+  YoutubeIcon,
+  XIcon,
+  TiktokIcon,
+  ThreadsIcon,
+  MapPinIcon,
+  PhoneIcon,
+  MailIcon,
+} from '@/components/Icons';
 
 const QUICK_LINKS = [
   { label: 'About Us',    href: '/about' },
@@ -13,23 +25,41 @@ const QUICK_LINKS = [
 ];
 
 const SOCIAL_LINKS = [
-  { label: 'Facebook', href: 'https://www.facebook.com/Sir John Ndukwe Legacy Foundation', icon: 'f' },
-  { label: 'Instagram', href: 'https://www.instagram.com/sirjohnndukwelegacyfoundation', icon: '◈' },
-  { label: 'YouTube', href: 'https://www.youtube.com/@SirJohnNdukweLegacyFoundation', icon: '▶' },
-  { label: 'X / Twitter', href: 'https://twitter.com/Sirjohnndukwe', icon: '𝕏' },
-  { label: 'TikTok', href: 'https://www.tiktok.com/@SirJohnNdukweLegacyFoundation', icon: '♪' },
-  { label: 'Threads', href: 'https://www.threads.net/@Sir John Ndukwe Legacy Foundation', icon: '@' },
+  { label: 'Facebook', href: 'https://www.facebook.com/Sir%20John%20Ndukwe%20Legacy%20Foundation', iconKey: 'facebook' },
+  { label: 'Instagram', href: 'https://www.instagram.com/sirjohnndukwelegacyfoundation', iconKey: 'instagram' },
+  { label: 'YouTube', href: 'https://www.youtube.com/@SirJohnNdukweLegacyFoundation', iconKey: 'youtube' },
+  { label: 'X / Twitter', href: 'https://twitter.com/Sirjohnndukwe', iconKey: 'x' },
+  { label: 'TikTok', href: 'https://www.tiktok.com/@SirJohnNdukweLegacyFoundation', iconKey: 'tiktok' },
+  { label: 'Threads', href: 'https://www.threads.net/@Sir%20John%20Ndukwe%20Legacy%20Foundation', iconKey: 'threads' },
 ];
 
 export default function Footer() {
+  const renderSocialIcon = (key: string) => {
+    switch (key) {
+      case 'facebook': return <FacebookIcon size={16} />;
+      case 'instagram': return <InstagramIcon size={16} />;
+      case 'youtube': return <YoutubeIcon size={16} />;
+      case 'x': return <XIcon size={14} />;
+      case 'tiktok': return <TiktokIcon size={16} />;
+      case 'threads': return <ThreadsIcon size={16} />;
+      default: return null;
+    }
+  };
+
   return (
     <footer className={styles.footer}>
       <div className={`container ${styles.footerGrid}`}>
 
         {/* Brand column */}
         <div className={styles.brand}>
-          <div className={styles.logoBadge}>
-            <span>SJN</span>
+          <div className={styles.logoImageWrapper}>
+            <Image
+              src="/logo.jpg"
+              alt="Sir John Ndukwe Legacy Foundation Logo"
+              width={52}
+              height={52}
+              className={styles.logoImage}
+            />
           </div>
           <div>
             <p className={styles.brandName}>SIR JOHN NDUKWE<br />LEGACY FOUNDATION</p>
@@ -59,18 +89,29 @@ export default function Footer() {
           <h3 className={styles.colTitle}>Contact Us</h3>
           <ul className={styles.contactList}>
             <li>
-              <span className={styles.contactIcon}>📍</span>
+              <span className={styles.contactIcon}>
+                <MapPinIcon size={18} />
+              </span>
               <span>Plot 87 Valington Royal Estate Jikwoyi, FCT, Abuja, Nigeria.</span>
             </li>
             <li>
-              <span className={styles.contactIcon}>📞</span>
-              <span>+2348065166127 / +2348069099337</span>
+              <span className={styles.contactIcon}>
+                <PhoneIcon size={18} />
+              </span>
+              <span>+2348065166127</span>
             </li>
             <li>
-              <span className={styles.contactIcon}>✉</span>
-              <a href="mailto:sirjohnfoundation@gmail.com" className={styles.footerLink}>
-                sirjohnfoundation@gmail.com
-              </a>
+              <span className={styles.contactIcon}>
+                <MailIcon size={18} />
+              </span>
+              <div className={styles.emailsContainer}>
+                <a href="mailto:sirjohnfoundation@gmail.com" className={styles.footerLink}>
+                  sirjohnfoundation@gmail.com
+                </a>
+                <a href="mailto:donate@sirjohnndukwelegacyfoundation.org" className={styles.footerLink}>
+                  donate@sirjohnndukwelegacyfoundation.org
+                </a>
+              </div>
             </li>
           </ul>
         </div>
@@ -88,7 +129,7 @@ export default function Footer() {
                 aria-label={s.label}
                 className={styles.socialIcon}
               >
-                {s.icon}
+                {renderSocialIcon(s.iconKey)}
               </a>
             ))}
           </div>

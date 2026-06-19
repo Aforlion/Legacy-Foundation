@@ -1,168 +1,48 @@
-/* ── HERO SECTION ───────────────────────────────────────────── */
+/* ── HERO — client banner (UX/UI handoff, no effects) ────────── */
 .hero {
-  position: relative;
-  min-height: 80vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 6rem 1.5rem;
-  overflow: hidden;
+  width: 100%;
+  background: #050d1a;
+  line-height: 0; /* removes inline gap under the image wrapper */
 }
 
-.heroBackground {
-  position: absolute;
-  top: 0;
-  left: 0;
+.heroImageWrap {
+  position: relative;
   width: 100%;
-  height: 100%;
-  z-index: 1;
+  aspect-ratio: 16 / 5;   /* keeps the banner proportional on all screens */
+  overflow: hidden;
 }
 
 .heroImage {
   object-fit: cover;
-  object-position: center;
+  object-position: center top;
 }
 
-.heroOverlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    135deg,
-    rgba(13, 27, 42, 0.95) 0%,
-    rgba(27, 38, 59, 0.85) 50%,
-    rgba(65, 90, 119, 0.7) 100%
-  );
-  z-index: 2;
-}
 
-.heroContent {
-  position: relative;
-  z-index: 3;
-  max-width: 800px;
-  text-align: center;
-  color: #ffffff;
-  animation: fadeInUp 0.8s ease-out;
-}
-
-.badge {
-  display: inline-block;
-  padding: 0.5rem 1.25rem;
-  background: rgba(224, 225, 221, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  border-radius: 50px;
-  color: var(--color-accent);
-  font-size: 0.875rem;
-  font-weight: 600;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin-bottom: 1.5rem;
-  backdrop-filter: blur(5px);
-}
-
-.heroTitle {
-  font-size: 3.5rem;
-  font-weight: 800;
-  line-height: 1.15;
-  margin-bottom: 1.5rem;
-  font-family: var(--font-secondary);
-}
-
-.highlightText {
-  color: var(--color-accent);
-  position: relative;
-}
-
-.heroSubtitle {
-  font-size: 1.25rem;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.85);
-  margin-bottom: 2.5rem;
-  font-weight: 300;
-}
-
-.heroButtons {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-}
-
-@media (max-width: 768px) {
-  .heroTitle {
-    font-size: 2.5rem;
-  }
-  .heroSubtitle {
-    font-size: 1.1rem;
-  }
-  .heroButtons {
+/* ── RESPONSIVE MEDIA BRACKETS ────────────────────────────── */
+@media (max-width: 1024px) {
+  .heroLayout {
     flex-direction: column;
-    gap: 0.75rem;
+    height: auto;
+  }
+  .heroLeft {
+    padding: 4rem 2rem;
+  }
+  .heroRight {
+    height: 420px;
   }
 }
 
-/* ── STATS SECTION ──────────────────────────────────────────── */
-.statsSection {
-  position: relative;
-  z-index: 10;
-  margin-top: -4rem;
-  padding-bottom: 4rem;
-}
-
-.statsGrid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
-}
-
-.statCard {
-  background: #ffffff;
-  padding: 2rem 1.5rem;
-  border-radius: 12px;
-  box-shadow: var(--shadow-md);
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid rgba(224, 225, 221, 0.5);
-}
-
-.statCard:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-lg);
-}
-
-.statIcon {
-  font-size: 2.5rem;
-  display: block;
-  margin-bottom: 1rem;
-}
-
-.statVal {
-  font-size: 2.25rem;
-  font-weight: 700;
-  color: var(--color-primary);
-  margin-bottom: 0.25rem;
-  font-family: var(--font-secondary);
-}
-
-.statLbl {
-  font-size: 0.95rem;
-  color: var(--color-gray-dark);
-  font-weight: 500;
-}
-
-@media (max-width: 992px) {
-  .statsGrid {
-    grid-template-columns: repeat(2, 1fr);
+@media (max-width: 640px) {
+  .heroRight {
+    height: 520px;
+    flex-direction: column;
   }
-  .statsSection {
-    margin-top: -2rem;
+  .accordionPanel {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
-}
-
-@media (max-width: 576px) {
-  .statsGrid {
-    grid-template-columns: 1fr;
+  .accordionPanel:hover {
+    flex: 2;
   }
 }
 
