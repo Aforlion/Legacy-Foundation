@@ -15,8 +15,8 @@
 
 .welcomeText {
   font-family: 'Constantia', Georgia, serif;
-  font-size: 0.9rem;
-  font-weight: 600;
+  font-size: 1.05rem;
+  font-weight: 700;
   letter-spacing: 0.03em;
   text-align: center;
 }
@@ -37,13 +37,13 @@
 .socialIcons a {
   display: grid;
   place-items: center;
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   background: rgba(255,255,255,.12);
   color: var(--color-white);
-  font-size: 0.7rem;
-  font-weight: 700;
+  font-size: 0.8rem;
+  font-weight: 800;
   transition: background var(--duration) var(--ease), transform var(--duration) var(--ease);
   text-decoration: none;
 }
@@ -249,4 +249,18 @@
   .mobileMenu { display: flex; }
   .mobileMenu:not(.mobileOpen) { display: none; }
   .topBarRight { display: none; }
+}
+
+.headerButtons {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-shrink: 0;
+}
+
+.mobileButtons {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
 }

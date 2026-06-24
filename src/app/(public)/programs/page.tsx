@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './programs.module.css';
+import SubpageCTA from '@/components/SubpageCTA/SubpageCTA';
 
 export const metadata = {
   title: 'Our Programs',
@@ -18,6 +19,9 @@ export default function ProgramsPage() {
           <p>Targeted, structured interventions designed to create sustainable, long-term impact.</p>
         </div>
       </section>
+
+      {/* Subpage CTA Band */}
+      <SubpageCTA />
 
       {/* Program 1: Early Childhood Development */}
       <section id="ecd" className={styles.programSection}>

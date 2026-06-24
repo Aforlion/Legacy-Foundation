@@ -1,0 +1,49 @@
+.ctaBand {
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+  padding: var(--space-4) 0;
+  border-bottom: 3px solid var(--color-gold);
+}
+
+.ctaInner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.accentText {
+  color: var(--color-gold);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.heading {
+  color: var(--color-white);
+  font-size: 1.25rem;
+  margin: 0;
+  font-family: var(--font-heading);
+  font-weight: 700;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: var(--space-4);
+}
+
+@media (max-width: 768px) {
+  .ctaInner {
+    flex-direction: column;
+    text-align: center;
+  }
+  .buttonGroup {
+    width: 100%;
+    justify-content: center;
+  }
+}

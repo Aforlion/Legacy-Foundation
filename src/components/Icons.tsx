@@ -69,7 +69,7 @@ export const FacebookIcon: React.FC<IconProps> = ({ size = 18, ...props }) => (
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
-    strokeWidth="2"
+    strokeWidth="3"
     strokeLinecap="round"
     strokeLinejoin="round"
     {...props}
@@ -86,7 +86,7 @@ export const InstagramIcon: React.FC<IconProps> = ({ size = 18, ...props }) => (
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
-    strokeWidth="2"
+    strokeWidth="3"
     strokeLinecap="round"
     strokeLinejoin="round"
     {...props}
@@ -105,7 +105,7 @@ export const YoutubeIcon: React.FC<IconProps> = ({ size = 18, ...props }) => (
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
-    strokeWidth="2"
+    strokeWidth="3"
     strokeLinecap="round"
     strokeLinejoin="round"
     {...props}
@@ -123,7 +123,7 @@ export const XIcon: React.FC<IconProps> = ({ size = 16, ...props }) => (
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
-    strokeWidth="2"
+    strokeWidth="3"
     strokeLinecap="round"
     strokeLinejoin="round"
     {...props}
@@ -141,7 +141,7 @@ export const TiktokIcon: React.FC<IconProps> = ({ size = 18, ...props }) => (
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
-    strokeWidth="2"
+    strokeWidth="3"
     strokeLinecap="round"
     strokeLinejoin="round"
     {...props}
@@ -158,7 +158,7 @@ export const ThreadsIcon: React.FC<IconProps> = ({ size = 18, ...props }) => (
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
-    strokeWidth="2"
+    strokeWidth="3"
     strokeLinecap="round"
     strokeLinejoin="round"
     {...props}

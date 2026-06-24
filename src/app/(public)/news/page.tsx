@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { supabase } from '@/lib/supabase';
 import styles from './news.module.css';
+import SubpageCTA from '@/components/SubpageCTA/SubpageCTA';
 
 const DEFAULT_NEWS_EVENTS = [
   {
@@ -87,6 +88,9 @@ export default function NewsEventsPage() {
           <p>Stay updated with our latest activities, press announcements, and upcoming events.</p>
         </div>
       </section>
+
+      {/* Subpage CTA Band */}
+      <SubpageCTA />
 
       {/* Content Section */}
       <section className={styles.newsSection}>

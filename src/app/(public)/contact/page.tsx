@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { submitContactForm } from './actions';
 import styles from './contact.module.css';
+import SubpageCTA from '@/components/SubpageCTA/SubpageCTA';
 import {
   MapPinIcon,
   PhoneIcon,
@@ -45,6 +46,9 @@ export default function ContactPage() {
           <p>Get in touch with the Sir John Ndukwe Legacy Foundation. We would love to hear from you.</p>
         </div>
       </section>
+
+      {/* Subpage CTA Band */}
+      <SubpageCTA />
 
       {/* Content Grid */}
       <section className={styles.contentSection}>

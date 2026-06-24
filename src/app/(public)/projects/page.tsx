@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './projects.module.css';
+import SubpageCTA from '@/components/SubpageCTA/SubpageCTA';
 
 export const metadata = {
   title: 'Our Projects',
@@ -61,6 +62,9 @@ export default function ProjectsPage() {
           <p>Real, on-the-ground initiatives addressing tangible challenges in communities.</p>
         </div>
       </section>
+
+      {/* Subpage CTA Band */}
+      <SubpageCTA />
 
       {/* Projects Grid */}
       <section className={styles.projectsSection}>

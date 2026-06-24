@@ -120,9 +120,14 @@ export default function Navbar() {
             )}
           </nav>
 
-          <Link href="/donate" className="btn btn--primary btn--sm" id="cta-donate-header">
-            Donate Now ♥
-          </Link>
+          <div className={styles.headerButtons}>
+            <Link href="/donate" className="btn btn--primary btn--sm" id="cta-donate-header" style={{ fontWeight: 800 }}>
+              Donate Now ♥
+            </Link>
+            <Link href="/volunteer" className="btn btn--outline btn--sm" id="cta-partner-header" style={{ fontWeight: 800 }}>
+              Partner With Us
+            </Link>
+          </div>
 
           {/* Mobile hamburger */}
           <button
@@ -147,9 +152,14 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
-          <Link href="/donate" className="btn btn--primary" onClick={() => setMenuOpen(false)}>
-            Donate Now ♥
-          </Link>
+          <div className={styles.mobileButtons}>
+            <Link href="/donate" className="btn btn--primary" style={{ fontWeight: 800 }} onClick={() => setMenuOpen(false)}>
+              Donate Now ♥
+            </Link>
+            <Link href="/volunteer" className="btn btn--outline" style={{ fontWeight: 800 }} onClick={() => setMenuOpen(false)}>
+              Partner With Us
+            </Link>
+          </div>
         </div>
       </header>
     </>

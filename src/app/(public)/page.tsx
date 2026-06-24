@@ -72,6 +72,15 @@ export default async function HomePage() {
 
   return (
     <div className={styles.container}>
+      {/* Motto Statement Band */}
+      <div className={styles.mottoBand}>
+        <div className="container">
+          <p className={styles.mottoText}>
+            Empowering vulnerable communities through humanitarian assistance, education support, healthcare outreach, human rights advocacy, and sustainable development initiatives across Nigeria.
+          </p>
+        </div>
+      </div>
+
       {/* Hero — client banner image, unstyled for UX/UI handoff */}
       <section className={styles.hero}>
         <div className={styles.heroImageWrap}>
@@ -118,6 +127,65 @@ export default async function HomePage() {
         </div>
       </section>
 
+      {/* Leadership Section */}
+      <section className={styles.leadershipSection}>
+        <div className="container">
+          <div className="text-center mb-5">
+            <span className="section-subtitle">Our Leadership</span>
+            <h2 className="section-title">Governing Board & Trustees</h2>
+            <p className="section-desc">
+              Meet the visionaries directing our strategic programs and advocating for social equity and inclusion.
+            </p>
+          </div>
+          <div className={styles.leadershipGrid}>
+            <div className={styles.leadershipCard}>
+              <div className={styles.leadershipImgWrapper}>
+                <Image
+                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=400"
+                  alt="Lady Beatrice Ndukwe"
+                  width={300}
+                  height={300}
+                  className={styles.leadershipImg}
+                />
+              </div>
+              <h3>Lady Beatrice Ndukwe</h3>
+              <p className={styles.role}>Chairperson, Board of Trustees</p>
+            </div>
+            <div className={styles.leadershipCard}>
+              <div className={styles.leadershipImgWrapper}>
+                <Image
+                  src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=400"
+                  alt="Dr. Emmanuel Ndukwe"
+                  width={300}
+                  height={300}
+                  className={styles.leadershipImg}
+                />
+              </div>
+              <h3>Dr. Emmanuel Ndukwe</h3>
+              <p className={styles.role}>Executive Director</p>
+            </div>
+            <div className={styles.leadershipCard}>
+              <div className={styles.leadershipImgWrapper}>
+                <Image
+                  src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=400"
+                  alt="Mrs. Sarah Alao"
+                  width={300}
+                  height={300}
+                  className={styles.leadershipImg}
+                />
+              </div>
+              <h3>Mrs. Sarah Alao</h3>
+              <p className={styles.role}>Trustee & Legal Advisor</p>
+            </div>
+          </div>
+          <div className="text-center mt-5">
+            <Link href="/about#leadership" className="btn btn--primary">
+              Meet Our Leaders
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Recent Activities/News Section */}
       <section className={styles.newsSection}>
         <div className="container">
@@ -157,6 +225,46 @@ export default async function HomePage() {
                 </div>
               </article>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Success Stories Section */}
+      <section className={styles.successSection}>
+        <div className="container">
+          <div className="text-center mb-5">
+            <span className="section-subtitle font-secondary">Success Stories</span>
+            <h2 className="section-title">Real Lives, Real Impact</h2>
+            <p className="section-desc">
+              Read testimonies from the individuals and families who have found hope and opportunity through our programs.
+            </p>
+          </div>
+          <div className={styles.successGrid}>
+            <div className={styles.successCard}>
+              <div className={styles.successQuote}>“</div>
+              <p className={styles.successText}>
+                "The interest-free micro-grant from Sir John Ndukwe Legacy Foundation completely turned my retail business around. I was able to stock up my shop, and today I pay my children's school fees with ease."
+              </p>
+              <div className={styles.successAuthor}>
+                <h4>Mrs. Chioma Okoye</h4>
+                <span>Jikwoyi Market Beneficiary</span>
+              </div>
+            </div>
+            <div className={styles.successCard}>
+              <div className={styles.successQuote}>“</div>
+              <p className={styles.successText}>
+                "My son received a full educational scholarship and basic learning aids from the foundation. The guidance and nutritional support have given him a solid footing for early development."
+              </p>
+              <div className={styles.successAuthor}>
+                <h4>Mr. Bala Ibrahim</h4>
+                <span>Nyanya Community Member</span>
+              </div>
+            </div>
+          </div>
+          <div className="text-center mt-5">
+            <Link href="/projects" className="btn btn-outline-primary">
+              Read Our Success Stories
+            </Link>
           </div>
         </div>
       </section>

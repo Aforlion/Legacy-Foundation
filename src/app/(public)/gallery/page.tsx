@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { supabase } from '@/lib/supabase';
 import styles from './gallery.module.css';
+import SubpageCTA from '@/components/SubpageCTA/SubpageCTA';
 
 const DEFAULT_GALLERY = [
   { id: '1', image_url: 'https://images.unsplash.com/photo-1509099836639-18ba1795216d?q=80&w=800', title: 'Early learning toys distribution', category: 'education' },
@@ -62,6 +63,9 @@ export default function GalleryPage() {
           <p>A visual record of our journeys, our interventions, and the lives we touch.</p>
         </div>
       </section>
+
+      {/* Subpage CTA Band */}
+      <SubpageCTA />
 
       {/* Main Section */}
       <section className={styles.gallerySection}>
