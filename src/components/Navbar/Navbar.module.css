@@ -249,6 +249,7 @@
   .mobileMenu { display: flex; }
   .mobileMenu:not(.mobileOpen) { display: none; }
   .topBarRight { display: none; }
+  .headerButtons { display: none; }
 }
 
 .headerButtons {
