@@ -116,17 +116,17 @@ export default function AboutPage() {
             <div className={styles.leadershipCard}>
               <div className={styles.leadershipImgWrapper}>
                 <Image
-                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=400"
-                  alt="Lady Beatrice Ndukwe"
+                  src="/john-ndukwe.jpeg"
+                  alt="John Ndukwe"
                   fill
                   className={styles.leadershipImg}
                 />
               </div>
               <div className={styles.leadershipInfo}>
-                <h3>Lady Beatrice Ndukwe</h3>
-                <p className={styles.role}>Chairperson, Board of Trustees</p>
+                <h3>John Ndukwe</h3>
+                <p className={styles.role}>Chairman</p>
                 <p className={styles.bio}>
-                  Lady Beatrice has over 25 years of experience in community education advocacy and philanthropic initiatives. She directs the strategic alignment of the foundation with its core motto of Equity, Dignity, and Humanity.
+                  John Ndukwe serves as the Chairman of the Board of Trustees. He leads the foundation with a strategic vision to advance equity, dignity, and humanity across vulnerable communities.
                 </p>
               </div>
             </div>
@@ -134,17 +134,17 @@ export default function AboutPage() {
             <div className={styles.leadershipCard}>
               <div className={styles.leadershipImgWrapper}>
                 <Image
-                  src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=400"
-                  alt="Dr. Emmanuel Ndukwe"
+                  src="/john-precious-ndukwe.jpeg"
+                  alt="John Precious Ndukwe"
                   fill
                   className={styles.leadershipImg}
                 />
               </div>
               <div className={styles.leadershipInfo}>
-                <h3>Dr. Emmanuel Ndukwe</h3>
-                <p className={styles.role}>Executive Director</p>
+                <h3>John Precious Ndukwe</h3>
+                <p className={styles.role}>Secretary</p>
                 <p className={styles.bio}>
-                  Dr. Emmanuel oversees the day-to-day operations and grassroots implementation of early childhood development and poverty alleviation programs across Nigeria.
+                  John Precious Ndukwe serves as the Secretary of the Board of Trustees. He oversees administration, documentation, and coordination of the foundation's projects and outreach initiatives.
                 </p>
               </div>
             </div>
@@ -152,17 +152,17 @@ export default function AboutPage() {
             <div className={styles.leadershipCard}>
               <div className={styles.leadershipImgWrapper}>
                 <Image
-                  src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=400"
-                  alt="Mrs. Sarah Alao"
+                  src="/don-emmanuel.jpeg"
+                  alt="Don Emmanuel"
                   fill
                   className={styles.leadershipImg}
                 />
               </div>
               <div className={styles.leadershipInfo}>
-                <h3>Mrs. Sarah Alao</h3>
-                <p className={styles.role}>Trustee & Legal Advisor</p>
+                <h3>Don Emmanuel</h3>
+                <p className={styles.role}>Member</p>
                 <p className={styles.bio}>
-                  Mrs. Sarah provides strategic legal counsel and handles institutional partnerships. She is passionate about human rights advocacy and gender inclusion frameworks.
+                  Don Emmanuel is a key member of the Board of Trustees, contributing to the development and implementation of community empowerment, humanitarian relief, and capacity-building programs.
                 </p>
               </div>
             </div>

@@ -303,3 +303,37 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+/* Frequency Selector */
+.frequencySelector {
+  display: flex;
+  background: var(--color-light);
+  padding: 0.35rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(224, 225, 221, 0.8);
+}
+
+.frequencyBtn {
+  flex: 1;
+  background: transparent;
+  border: none;
+  padding: 0.6rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-gray-dark);
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.frequencyBtn:hover {
+  color: var(--color-primary);
+}
+
+.activeFrequency {
+  background: #ffffff;
+  color: var(--color-primary-dark) !important;
+  box-shadow: var(--shadow-sm);
+}

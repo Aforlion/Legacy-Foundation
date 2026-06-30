@@ -141,41 +141,41 @@ export default async function HomePage() {
             <div className={styles.leadershipCard}>
               <div className={styles.leadershipImgWrapper}>
                 <Image
-                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=400"
-                  alt="Lady Beatrice Ndukwe"
+                  src="/john-ndukwe.jpeg"
+                  alt="John Ndukwe"
                   width={300}
                   height={300}
                   className={styles.leadershipImg}
                 />
               </div>
-              <h3>Lady Beatrice Ndukwe</h3>
-              <p className={styles.role}>Chairperson, Board of Trustees</p>
+              <h3>John Ndukwe</h3>
+              <p className={styles.role}>Chairman</p>
             </div>
             <div className={styles.leadershipCard}>
               <div className={styles.leadershipImgWrapper}>
                 <Image
-                  src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=400"
-                  alt="Dr. Emmanuel Ndukwe"
+                  src="/john-precious-ndukwe.jpeg"
+                  alt="John Precious Ndukwe"
                   width={300}
                   height={300}
                   className={styles.leadershipImg}
                 />
               </div>
-              <h3>Dr. Emmanuel Ndukwe</h3>
-              <p className={styles.role}>Executive Director</p>
+              <h3>John Precious Ndukwe</h3>
+              <p className={styles.role}>Secretary</p>
             </div>
             <div className={styles.leadershipCard}>
               <div className={styles.leadershipImgWrapper}>
                 <Image
-                  src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=400"
-                  alt="Mrs. Sarah Alao"
+                  src="/don-emmanuel.jpeg"
+                  alt="Don Emmanuel"
                   width={300}
                   height={300}
                   className={styles.leadershipImg}
                 />
               </div>
-              <h3>Mrs. Sarah Alao</h3>
-              <p className={styles.role}>Trustee & Legal Advisor</p>
+              <h3>Don Emmanuel</h3>
+              <p className={styles.role}>Member</p>
             </div>
           </div>
           <div className="text-center mt-5">
@@ -318,7 +318,7 @@ export default async function HomePage() {
               Join as Volunteer
             </Link>
             <Link href="/donate" className="btn btn--ghost btn--lg">
-              Support Financially
+              Donate Now – Support a Life Today
             </Link>
           </div>
         </div>

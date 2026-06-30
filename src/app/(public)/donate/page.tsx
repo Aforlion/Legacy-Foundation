@@ -10,6 +10,7 @@ export default function DonatePage() {
   const [selectedAmount, setSelectedAmount] = useState<number | 'custom'>(25000);
   const [customAmount, setCustomAmount] = useState('');
   const [paymentMethod, setPaymentMethod] = useState<'bank' | 'card'>('bank');
+  const [frequency, setFrequency] = useState<'one-time' | 'monthly'>('one-time');
 
   const getFinalAmount = () => {
     if (selectedAmount === 'custom') {
@@ -37,7 +38,25 @@ export default function DonatePage() {
             <div className={styles.formCol}>
               <div className={styles.donateCard}>
                 <h3>Support Sir John Ndukwe Legacy Foundation</h3>
-                <p className={styles.cardSubtitle}>Select or enter your desired donation amount (₦)</p>
+                <p className={styles.cardSubtitle}>Choose how often you would like to give and the amount (₦)</p>
+
+                {/* Donation Frequency Selector */}
+                <div className={styles.frequencySelector}>
+                  <button
+                    type="button"
+                    className={`${styles.frequencyBtn} ${frequency === 'one-time' ? styles.activeFrequency : ''}`}
+                    onClick={() => setFrequency('one-time')}
+                  >
+                    One-Time Donation
+                  </button>
+                  <button
+                    type="button"
+                    className={`${styles.frequencyBtn} ${frequency === 'monthly' ? styles.activeFrequency : ''}`}
+                    onClick={() => setFrequency('monthly')}
+                  >
+                    Monthly Donation (Recurring)
+                  </button>
+                </div>
 
                 {/* Preset Amounts */}
                 <div className={styles.presetsGrid}>
@@ -98,7 +117,7 @@ export default function DonatePage() {
                 {paymentMethod === 'bank' ? (
                   <div className={styles.bankBox}>
                     <h4>Direct Bank Transfer Instructions</h4>
-                    <p>Kindly transfer your donation of <strong>₦{getFinalAmount().toLocaleString('en-NG')}</strong> directly to our bank account below:</p>
+                    <p>Kindly transfer your {frequency === 'monthly' ? 'monthly recurring ' : ''}donation of <strong>₦{getFinalAmount().toLocaleString('en-NG')}{frequency === 'monthly' ? ' / month' : ''}</strong> directly to our bank account below:</p>
                     
                     <div className={styles.bankDetails}>
                       <div className={styles.detailRow}>
@@ -116,7 +135,7 @@ export default function DonatePage() {
                     </div>
 
                     <p className={styles.bankTip}>
-                      💡 Please include your <strong>Name</strong> or <strong>"Donation"</strong> in the reference field. 
+                      💡 Please include your <strong>Name</strong> and <strong>"{frequency === 'monthly' ? 'Monthly Donation' : 'Donation'}"</strong> in the reference field. 
                       Once done, you can email your transfer receipt to <strong>donate@sirjohnndukwelegacyfoundation.org</strong> to receive an official acknowledgement.
                     </p>
                   </div>
@@ -127,7 +146,7 @@ export default function DonatePage() {
                     
                     <div className={styles.paymentPreview}>
                       <span>Donation Amount:</span>
-                      <strong>₦{getFinalAmount().toLocaleString('en-NG')}</strong>
+                      <strong>₦{getFinalAmount().toLocaleString('en-NG')}{frequency === 'monthly' ? ' / month' : ''}</strong>
                     </div>
 
                     <button
@@ -135,7 +154,7 @@ export default function DonatePage() {
                       disabled
                       className="btn btn-primary btn-block btn-lg"
                     >
-                      Proceed to Pay (Awaiting Gateway Approval)
+                      Proceed to Pay {frequency === 'monthly' ? 'Monthly ' : ''}(Awaiting Gateway Approval)
                     </button>
                     
                     <p className={styles.gatewayDisclaimer}>
